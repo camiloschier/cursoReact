@@ -5,15 +5,16 @@ class FormNota extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = { nuevatarea: '', arrayNotas: ["Comprar cosas del super","Comprar lavandina","Limpiar baño", "Esconder cuerpo", "Llamar al 911"] }
+        this.state = { nuevatarea: '', notas: ["Comprar cosas del super","Comprar lavandina","Limpiar baño", "Esconder cuerpo", "Llamar al 911"] }
       }
       
 
   onChange = e => this.setState({ [e.target.name]: e.target.value })
 
   addNota = (nuevaNota) => {
-    let notas = this.state.arrayNotas.push(nuevaNota)
-    this.setState({arrayNotas: notas})
+    this.setState({
+      notas: [...this.state.notas, nuevaNota]
+    })
   }
   render () {
     return (
@@ -22,7 +23,7 @@ class FormNota extends React.Component {
       <input type="text" name="nuevatarea" value={this.state.nuevatarea} onChange={this.onChange}/>
       <button onClick={() => this.addNota(this.state.nuevatarea)}>Agregar nota</button>
     </div>
-      <Nota contenido={this.state.arrayNotas} />
+      <Nota contenido={this.state.notas} />
     </>
     )
 
