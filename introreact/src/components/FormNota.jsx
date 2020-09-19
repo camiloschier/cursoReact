@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Nota from './Nota'
+import { IoIosAdd } from 'react-icons/io'
+import { FaBeer } from 'react-icons/fa';
 class FormNota extends React.Component {
 
     constructor(props) {
@@ -51,8 +53,8 @@ class FormNota extends React.Component {
     return (
     <>
     <div>
-      <input type="text" name="nuevatarea" value={this.state.nuevatarea} onChange={this.onChange}/>
-      <button onClick={() => this.addNota(this.state.nuevatarea)}>Agregar nota</button>
+      <input type="text" style={{ width: '70%' , marginTop: '10px', marginBottom:'10px'}} name="nuevatarea" value={this.state.nuevatarea} onChange={this.onChange}/>
+      <button onClick={() => this.addNota(this.state.nuevatarea)} style={{width:'20%'}}> <FaBeer /> </button>
       <button onClick={this.removerNotas}>Eliminar todas las notas</button>
 
     </div>
