@@ -9,13 +9,21 @@ class Nota extends React.Component {
     
     render() {
         return(
-            this.props.contenido.map(nota => (
-                <div className="nota">
+            <>
+               { this.props.contenido  ?  
+                this.props.contenido.map((nota, i) => (
+                <div className="nota" key={i}>
                     {nota}
+                    <button onClick={() => this.props.removeNota(i)}>eliminar</button>
                 </div>
-            ))
-        )
-    }
+                
+                ))
+            :
+                <div>No hay notas</div>
+            }
+            </>
+        )}
+    
 }
 
 export default Nota;

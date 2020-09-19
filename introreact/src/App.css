@@ -3,5 +3,6 @@
   width: 400px;
   background-color: bisque;
   text-align: center;
-  margin: auto
+  margin: auto;
+  overflow-y: scroll;
 }
